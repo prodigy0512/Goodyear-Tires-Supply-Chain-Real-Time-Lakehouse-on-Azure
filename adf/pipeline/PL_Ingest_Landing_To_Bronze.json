@@ -1,0 +1,78 @@
+{
+  "name": "PL_Ingest_Landing_To_Bronze",
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy_ERP_Inventory_To_Bronze",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "7.00:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource"
+          },
+          "sink": {
+            "type": "DelimitedTextSink"
+          },
+          "enableStaging": false
+        },
+        "inputs": [
+          {
+            "referenceName": "DS_ERP_InventorySnapshot_CSV",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "DS_Bronze_ERP_InventorySnapshot",
+            "type": "DatasetReference"
+          }
+        ]
+      },
+      {
+        "name": "Copy_Oracle_PO_To_Bronze",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "7.00:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource"
+          },
+          "sink": {
+            "type": "DelimitedTextSink"
+          },
+          "enableStaging": false
+        },
+        "inputs": [
+          {
+            "referenceName": "DS_Oracle_PurchaseOrders_CSV",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "DS_Bronze_Oracle_PurchaseOrders",
+            "type": "DatasetReference"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      "bronze",
+      "ingestion",
+      "idempotent"
+    ]
+  }
+}

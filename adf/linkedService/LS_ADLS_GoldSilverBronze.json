@@ -1,0 +1,17 @@
+{
+  "name": "LS_ADLS_GoldSilverBronze",
+  "properties": {
+    "type": "AzureBlobFS",
+    "typeProperties": {
+      "url": "https://<storage-account-name>.dfs.core.windows.net"
+    },
+    "connectVia": {
+      "referenceName": "IR_Azure",
+      "type": "IntegrationRuntimeReference"
+    },
+    "annotations": [
+      "adlsgen2",
+      "lakehouse"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "TR_Hourly_Ingest_To_Bronze",
+  "properties": {
+    "type": "ScheduleTrigger",
+    "typeProperties": {
+      "recurrence": {
+        "frequency": "Hour",
+        "interval": 1,
+        "startTime": "2026-01-01T00:00:00Z",
+        "timeZone": "UTC"
+      }
+    },
+    "pipelines": [
+      {
+        "pipelineReference": {
+          "referenceName": "PL_Ingest_Landing_To_Bronze",
+          "type": "PipelineReference"
+        },
+        "parameters": {}
+      }
+    ]
+  }
+}

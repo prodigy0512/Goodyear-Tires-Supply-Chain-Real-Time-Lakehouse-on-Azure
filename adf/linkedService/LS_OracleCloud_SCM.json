@@ -1,0 +1,17 @@
+{
+  "name": "LS_OracleCloud_SCM",
+  "properties": {
+    "type": "Oracle",
+    "typeProperties": {
+      "connectionString": "Host=<oracle-host>;Port=1521;ServiceName=<service>;User ID=<user>;Password=<secret>"
+    },
+    "connectVia": {
+      "referenceName": "IR_Azure",
+      "type": "IntegrationRuntimeReference"
+    },
+    "annotations": [
+      "cloud",
+      "oracle"
+    ]
+  }
+}

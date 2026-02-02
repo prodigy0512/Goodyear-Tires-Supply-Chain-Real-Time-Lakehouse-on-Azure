@@ -1,0 +1,21 @@
+{
+  "name": "DS_Bronze_Oracle_PurchaseOrders",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "LS_ADLS_GoldSilverBronze",
+      "type": "LinkedServiceReference"
+    },
+    "type": "DelimitedText",
+    "typeProperties": {
+      "location": {
+        "type": "AzureBlobFSLocation",
+        "fileSystem": "datalake",
+        "folderPath": "bronze/oracle/purchase_orders",
+        "fileName": "@{concat(formatDateTime(utcnow(),'yyyy/MM/dd'),'/purchase_orders.csv')}"
+      },
+      "columnDelimiter": ",",
+      "firstRowAsHeader": true
+    },
+    "schema": []
+  }
+}
