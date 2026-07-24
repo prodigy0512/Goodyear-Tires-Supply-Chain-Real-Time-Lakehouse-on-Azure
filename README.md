@@ -1,4 +1,4 @@
-# Goodyear Tires Supply Chain – Real‑Time Lakehouse on Azure (ADF + ADLS Gen2)
+# Goodyear Tires Supply Chain – Real‑Time Lakehouse on Azure (ADF + ADLS Gen2) / Confluent kafka
 
 A GitHub-ready, portfolio-grade data engineering project that simulates a **critical supply chain management system** for a tire manufacturer.
 It demonstrates how to ingest data from **on‑prem systems** and **cloud Oracle**, land it into **Azure Data Lake Storage Gen2 (ADLS)**,
